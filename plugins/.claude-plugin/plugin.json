@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "landingpage-builder",
+  "version": "0.1.0",
+  "description": "Curated bundle of hand-authored skills — SaaS audits, founder coaching, communication coaching, daily planning, and German-language productivity workflows",
+  "author": {
+    "name": "Philipp Sieder"
+  },
+  "license": "MIT",
+  "keywords": ["saas", "ai", "founder", "de", "german", "business", "coaching", "audit", "planning", "productivity"]
+}
