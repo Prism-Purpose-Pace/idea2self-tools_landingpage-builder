@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "idea2self-skills",
+  "description": "Privater Marketplace für Idea2Self Workshop skills",
+  "owner": {
+    "name": "Philipp Sieder"
+  },
+  "plugins": [
+    {
+      "name": "landingpage-builder",
+      "source": "./plugins/landingpage-builder",
+      "description": "Geführter Weg von der Produktidee bis zur ersten high-quality Landing-Page mit Lovable."
+    }
+  ]
+}
