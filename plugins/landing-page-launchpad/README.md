@@ -34,7 +34,9 @@ docs/                          Handouts und Testplan für Menschen
 
 ## Installieren
 
-**In Lovable (aus GitHub):** In Workspace settings → Skills → Add → Import from GitHub je Skill eine dieser Adressen einfügen, sechs Importe. Teilnehmende können dieselben Adressen als persönliche Skills importieren.
+### Lovable, Weg 1: Import aus GitHub (empfohlen)
+
+In Workspace settings → Skills → Add → Import from GitHub je Skill eine dieser Adressen einfügen, sechs Importe. Teilnehmende können dieselben Adressen als persönliche Skills importieren.
 
 ```text
 https://github.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/tree/main/plugins/landing-page-launchpad/skills/launchpad
@@ -47,7 +49,75 @@ https://github.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/tree/m
 
 Lovables Dokumentation beschreibt Zusatzdateien nur „im selben Verzeichnis wie SKILL.md" und sagt nicht, ob Unterordner beim GitHub-Import gelesen werden. Das ist Punkt 2 im Testplan. Falls nicht: `scripts/flatten-skill.sh <skill>` erzeugt eine flache ZIP-Fassung zum Hochladen.
 
-**Als Plugin (Claude Code):** `/plugin marketplace add Prism-Purpose-Pace/idea2self-tools_landingpage-builder`, dann `/plugin install landing-page-launchpad@idea2self-skills`.
+### Lovable, Weg 2: Installations-Prompt
+
+Für Teilnehmende ohne Admin-Rechte im Workspace. Laut Lovable-Dokumentation kann der Agent im Build-Modus persönliche Skills aus dem Projekt-Chat anlegen, ändern und löschen, und er speichert sie ohne Rückfrage. Das Laden von Dateien aus dem Netz und das Anlegen von Zusatzdateien auf diesem Weg ist nicht geprüft (Testplan Punkt 13).
+
+So geht's:
+
+1. Ein beliebiges Lovable-Projekt öffnen, zum Beispiel ein leeres.
+2. Auf **Build-Modus** umschalten; die Installation kostet Credits.
+3. Den Prompt unten vollständig einfügen und abschicken.
+4. Prüfen unter Account settings → Personal skills: sechs Skills, deren Namen mit `launchpad` beginnen.
+
+````text
+Installiere die sechs Skills des Landing Page Launchpad als persönliche Skills in diesem Workspace. Ändere nichts am Projekt-Code und baue nichts.
+
+So gehst du vor:
+1. Lade jede unten genannte Datei über ihre Adresse und übernimm den Inhalt Zeichen für Zeichen. Nichts kürzen, übersetzen, verbessern oder zusammenfassen.
+2. Lege je Skill einen persönlichen Skill an. Name und Beschreibung stehen im Kopf der jeweiligen SKILL.md zwischen den Linien mit drei Bindestrichen; übernimm sie genau so. Der Inhalt ist der Rest der SKILL.md.
+3. Lege die übrigen Dateien eines Skills als Zusatzdateien mit demselben relativen Pfad an (zum Beispiel references/core-rules.md). Wenn persönliche Skills keine Zusatzdateien oder keine Unterordner erlauben, hänge jede Zusatzdatei an das Ende der SKILL.md an, jeweils mit der Überschrift `# Datei: <Pfad>`, und sag mir, dass du das getan hast.
+4. Wenn eine Adresse nicht lädt, ein Skill mit diesem Namen schon existiert oder ein Limit greift: hör bei diesem Skill auf, lege nichts Halbes an und nenne mir den Grund. Bestehende Skills überschreibst du nur, wenn ich es bestätige.
+5. Melde am Ende als Liste: Skill-Name, angelegt ja oder nein, Anzahl der Dateien, Zusatzdateien oder angehängt.
+
+Skill `launchpad`:
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad/SKILL.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad/references/core-rules.md
+
+Skill `launchpad-1-erkunden`:
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-1-erkunden/SKILL.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-1-erkunden/assets/template-produkt-grundlage.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-1-erkunden/references/core-rules.md
+
+Skill `launchpad-2-roast`:
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-2-roast/SKILL.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-2-roast/assets/template-agents-brief.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-2-roast/assets/template-produkt-strategie.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-2-roast/references/core-rules.md
+
+Skill `launchpad-3-bauen`:
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-3-bauen/SKILL.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-3-bauen/assets/template-agents-brief.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-3-bauen/assets/template-landing-page-konzept.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-3-bauen/references/art-direction.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-3-bauen/references/build-rules.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-3-bauen/references/checklist.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-3-bauen/references/core-rules.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-3-bauen/references/interview-guide.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-3-bauen/references/page-playbook.md
+
+Skill `launchpad-4-feedback`:
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-4-feedback/SKILL.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-4-feedback/assets/template-feedback-auswertung.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-4-feedback/references/build-rules.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-4-feedback/references/checklist.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-4-feedback/references/core-rules.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-4-feedback/references/interview-guide.md
+
+Skill `launchpad-5-veroeffentlichen`:
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-5-veroeffentlichen/SKILL.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-5-veroeffentlichen/assets/template-agents-brief.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-5-veroeffentlichen/assets/template-veroeffentlichungs-check.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-5-veroeffentlichen/references/core-rules.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-5-veroeffentlichen/references/email-connectors-eu.md
+- https://raw.githubusercontent.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/main/plugins/landing-page-launchpad/skills/launchpad-5-veroeffentlichen/references/legal-check-de.md
+````
+
+Wenn der Agent eine Datei nicht laden kann, Weg 1 nutzen oder die flache ZIP-Fassung aus `scripts/flatten-skill.sh` hochladen.
+
+### Claude Code
+
+`/plugin marketplace add Prism-Purpose-Pace/idea2self-tools_landingpage-builder`, dann `/plugin install landing-page-launchpad@idea2self-skills`.
 
 ## Starten
 

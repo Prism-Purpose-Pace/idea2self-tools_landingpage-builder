@@ -18,6 +18,7 @@ Die Skills sind bisher nicht in Lovable gelaufen. Zeiten, Credits und das Laden 
 | 10 | Schriften | Im Bericht nach dem Bau nachlesen | Schrift liegt im Projekt oder Ausweichschrift ist gemeldet |
 | 11 | Gestaltung | Zwei Läufe mit verschiedenen Angeboten nebeneinander | Seiten unterscheiden sich in Aufbau und Schrift, nicht nur in Farbe |
 | 12 | Konnektor (Etappe 5) | Brevo-Konnektor verbinden, Anmeldung mit eigener Adresse | E-Mail kommt an, Kontakt steht in der Liste |
+| 13 | Installations-Prompt | Prompt aus dem README im Build-Modus in einem leeren Projekt | sechs persönliche Skills, Zusatzdateien vorhanden oder angehängt, Text unverändert (Stichprobe: core-rules.md) |
 
 ## Nach dem Lauf
 

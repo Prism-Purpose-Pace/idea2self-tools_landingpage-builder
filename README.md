@@ -19,6 +19,8 @@ https://github.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder/tree/m
 
 Jeder Skill wird einzeln importiert. Die Liste aller Adressen für den Launchpad steht in `plugins/landing-page-launchpad/README.md`.
 
+Ohne Admin-Rechte im Workspace: Das Plugin-README enthält einen Installations-Prompt, mit dem der Lovable-Agent die sechs Launchpad-Skills als persönliche Skills anlegt (Abschnitt „Lovable, Weg 2").
+
 ## In Claude Code installieren
 
 ```text
