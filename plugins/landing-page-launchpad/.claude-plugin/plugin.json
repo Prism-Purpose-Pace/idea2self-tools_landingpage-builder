@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "landing-page-launchpad",
+  "version": "3.0.0",
+  "description": "Guided workshop from pitch to landing page in Lovable: explore, roast, build, feedback interviews, publication check. One skill per stage plus a router. German dialogue.",
+  "author": {
+    "name": "Philipp Sieder"
+  },
+  "repository": "https://github.com/Prism-Purpose-Pace/idea2self-tools_landingpage-builder",
+  "license": "MIT",
+  "keywords": ["landing-page", "lovable", "workshop", "german", "idea2self"]
+}
