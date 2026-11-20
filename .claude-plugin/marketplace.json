@@ -10,6 +10,12 @@
       "name": "landingpage-builder",
       "source": "./plugins/landingpage-builder",
       "description": "Geführter Weg von der Produktidee bis zur ersten high-quality Landing-Page mit Lovable."
+    },
+    {
+      "name": "landing-page-launchpad",
+      "source": "./plugins/landing-page-launchpad",
+      "description": "Workshop in fünf Etappen vom Pitch zur Landing-Page in Lovable, mit Feedback-Gesprächen und Veröffentlichungs-Check. Ein Skill je Etappe plus Router.",
+      "version": "3.0.0"
     }
   ]
 }
